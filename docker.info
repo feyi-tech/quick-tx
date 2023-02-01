@@ -1,0 +1,19 @@
+NPM Script 1
+"start-docker": "docker build -t feyitech-trade-bot ."
+
+The command above tells docker to build an image tagged with the name "feyitech-trade-bot" which 
+can be used to reference the image later in another command. 
+The ".", meaning "the current directory", indicates the location of the Dockerfile to the docker app.
+
+
+"run-docker": "docker run -d feyitech-trade-bot"
+
+The command above tells docker to run the docker image tagged "feyitech-trade-bot" in “detached” mode (in the background)
+
+The below command does the same thing with the above, except that it uses the -p flag to create a 
+mapping between the host's port 3000 to the container’s port 3000
+
+After a few seconds, opening a web browser to http://localhost:3000, the app should be seen.
+
+"run-docker-port": "docker run -dp 3000:3000 feyitech-trade-bot"
+
